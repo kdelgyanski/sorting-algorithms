@@ -7,8 +7,8 @@ const mergesort = (array) => {
         let leftArray = array.slice(left,middle);
         let rightArray = array.slice(middle, right);
 
-        mergesort(leftArray);
-        mergesort(rightArray);
+        leftArray = mergesort(leftArray);
+        rightArray = mergesort(rightArray);
 
         array = merge(leftArray, rightArray);
     }
@@ -30,7 +30,6 @@ const merge = (left, right) => {
             j++;
         }
     }
-
     addRest(i, left, sortedArray);
     addRest(j, right, sortedArray);
 
