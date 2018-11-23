@@ -14,7 +14,7 @@ const gnomesort = (array) => {
             i++
         }
     }
-    console.log(array);
+    return array;
 };
 
 module.exports = gnomesort;

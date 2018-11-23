@@ -10,7 +10,7 @@ const heapsort = (array) => {
 
         heapify(array, i, 0);
     }
-    console.log(array);
+    return array;
 }
 
 const heapify = (array, size, root) => {
