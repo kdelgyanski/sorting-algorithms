@@ -1,19 +1,20 @@
 const mergesort = (array) => {
+    let sorted = array.slice();
     let left = 0;
-    let right = array.length;
+    let right = sorted.length;
     let middle = Math.floor(right/2);
 
     if (right > 1) {
-        let leftArray = array.slice(left,middle);
-        let rightArray = array.slice(middle, right);
+        let leftArray = sorted.slice(left,middle);
+        let rightArray = sorted.slice(middle, right);
 
         leftArray = mergesort(leftArray);
         rightArray = mergesort(rightArray);
 
-        array = merge(leftArray, rightArray);
+        sorted = merge(leftArray, rightArray);
     }
     
-    return array;
+    return sorted;
 }
 
 const merge = (left, right) => {

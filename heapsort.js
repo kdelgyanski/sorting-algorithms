@@ -1,16 +1,17 @@
 const heapsort = (array) => {
-    for (let i = array.length / 2 - 1; i >= 0; i--) {
-        heapify(array, array.length, i);
+    let sorted = array.slice();
+    for (let i = sorted.length / 2 - 1; i >= 0; i--) {
+        heapify(sorted, sorted.length, i);
     }
 
-    for (let i = array.length - 1; i >= 0; i--) {
-        let temp = array[i];
-        array[i] = array[0];
-        array[0] = temp;
+    for (let i = sorted.length - 1; i >= 0; i--) {
+        let temp = sorted[i];
+        sorted[i] = sorted[0];
+        sorted[0] = temp;
 
-        heapify(array, i, 0);
+        heapify(sorted, i, 0);
     }
-    return array;
+    return sorted;
 }
 
 const heapify = (array, size, root) => {
